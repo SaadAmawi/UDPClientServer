@@ -7,7 +7,7 @@ public class UDPClient{
     public static void main(String args[]) {  
     // args[0] = message to be sent to the server; 
     // args[1] = IP address of the server
-     
+     //new branch comment
     DatagramSocket aSocket = null;
 
         try {
@@ -21,7 +21,7 @@ public class UDPClient{
             byte[] buffer = new byte[1000];
             DatagramPacket reply = new DatagramPacket(buffer, buffer.length);
             aSocket.receive(reply);		
-            System.out.println("Received Reply: following " + new String(reply.getData(), 0, reply.getLength())+"'sad");	
+            System.out.println("Received Reply: " + new String(reply.getData(), 0, reply.getLength())+"'sad");	
         }catch (SocketException e){System.out.println("Error Socket: " + e.getMessage());
         }catch (IOException e){System.out.println("Error IO: " + e.getMessage());
         }finally { 
